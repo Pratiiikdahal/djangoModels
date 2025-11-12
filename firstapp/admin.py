@@ -26,4 +26,9 @@ admin.site.register(Products,ProductAdmin)
 class VendorProductAdmin(admin.ModelAdmin):
     list_display=['vendor','products','price','stock','listed_at']
     list_per_page=15
+admin.site.register(vendorProduct,VendorProductAdmin)
 
+class ImageAdmin(admin.ModelAdmin):
+    list_display=['Image']
+    list_per_page=15
+admin.site.register(Image,ImageAdmin)

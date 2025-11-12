@@ -33,13 +33,17 @@ class Category(models.Model):
     
     def __str__(self):
         return  self.cat_name
+
+class Image(models.Model):
+    Image=models.ImageField(upload_to='product-images/',null=True,blank=True)   
     
 class Products(models.Model):
     product_name=models.CharField(max_length=50)
     product_description=models.TextField(max_length=100,blank=True,null=True)
     brand=models.CharField(max_length=50)
     created_at=models.DateTimeField(auto_now_add=True)
-    category=models.Fore
+    Image=models.ForeignKey(Image,on_delete=models.PROTECT,null=True,blank=True)
+    Category=models.ManyToManyField(Category,related_name='products')
     #string representation in the superadmin
     def __str__(self):
         return self.product_name
@@ -53,4 +57,5 @@ class vendorProduct(models.Model):
     
     def __str__(self):
         return f"{self.vendor.store_name} - {self.product.name}"
+      
       
