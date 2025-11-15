@@ -24,7 +24,7 @@ class ProductAdmin(admin.ModelAdmin):
 admin.site.register(Products,ProductAdmin)
 
 class VendorProductAdmin(admin.ModelAdmin):
-    list_display=['vendor','products','price','stock','listed_at']
+    list_display=['vendor','product','price','stock','listed_at']
     list_per_page=15
 admin.site.register(vendorProduct,VendorProductAdmin)
 

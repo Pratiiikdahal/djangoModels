@@ -2,4 +2,16 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+} 
+.search-input {
+    border-radius: 25px 0 0 25px !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+.search-input:focus {
+    box-shadow: none !important;
+    border-color: #dee2e6 !important;
+}
+.search-btn {
+    border-radius: 0 25px 25px 0 !important;
 }
