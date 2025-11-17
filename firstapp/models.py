@@ -29,7 +29,7 @@ class Vendor(models.Model):
 class Category(models.Model):
     cat_name=models.CharField(max_length=100)
     slug=models.SlugField(unique=True)
-    parent=models.ForeignKey('self',on_delete=models.CASCADE,related_name='category')  #for reverse query as you can access the category even as a sub category fi ever needed to do so
+    parent=models.ForeignKey('self',on_delete=models.CASCADE,related_name='category',null=True,blank=True)  #for reverse query as you can access the category even as a sub category fi ever needed to do so
     
     def __str__(self):
         return  self.cat_name

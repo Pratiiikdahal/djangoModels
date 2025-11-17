@@ -1,1 +1,30 @@
 {%extends 'base.html' %}
+{%block title%}Home{%endblock%}
+{%block content%}
+
+<section class='shopping-cards-container'>
+    <div class='container py-5'>
+        <h2>Featured Products</h2>
+    {%if product%}
+    <div class='shopping-cards-container-inner'>
+        {% for product in product%}
+                <div class='product-card rounded shadow'>
+                    <div class='img'>
+                        <img src={{product.Image.Image.url}} alt='card-image'></img>
+                    </div>
+                    <div class='card-content p-3'>
+                        <h4>{{product.product_name}}</h4>
+                        <p>{{product.product_description}}</p>
+                        <button class='cart'>Add to cart</button>
+                    </div>
+                </div>
+        {%endfor%}
+          </div>
+    {%else%}
+        <div class='no-product-present'>
+            <p>No products Present</p>
+        </div>
+    {%endif%}
+    </div>
+</section>
+{%endblock%}
